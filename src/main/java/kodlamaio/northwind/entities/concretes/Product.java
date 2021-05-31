@@ -15,17 +15,18 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="products")
+@Table(name="Products")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Product {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="product_id")
-	private int id;
 	
-	//@Column(name="category_id")
-	//private int categoryId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="product_id")
+	private	int id;
+	
+//	@Column(name="category_id")
+//	private int categoryId;
 	
 	@Column(name="product_name")
 	private String productName;
@@ -40,12 +41,9 @@ public class Product {
 	private String quantityPerUnit;
 	
 	@ManyToOne()
-	@JoinColumn(name = "category_id")
+	@JoinColumn(name="category_id")
 	private Category category;
 	
 	
-		
-
-
 	
 }
